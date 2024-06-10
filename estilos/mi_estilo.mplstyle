@@ -25,4 +25,4 @@ yaxis.labellocation: top        # alineación de la etiqueta del eje y
 xtick.color: gray               # color del nombre de categorías o escalas del eje x
 xtick.labelsize: 10             # tamaño del nombre de categorías o escalas del eje x 
 ytick.color: gray               # color del nombre de categorías o escalas del eje y
-ytick.labelsize: 8              # tamaño del nombre de categorías o escalas del eje y
+ytick.labelsize: 10              # tamaño del nombre de categorías o escalas del eje y
