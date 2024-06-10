@@ -1,26 +1,28 @@
-font.weight: bold
-font.size: 14.0
-text.color: 545353 
-xaxis.labellocation: left
-yaxis.labellocation: top
-xtick.color: gray
-ytick.color: gray
-axes.titleweight: bold
-axes.titlepad: 30
-axes.grid: True
-axes.axisbelow: True
-axes.edgecolor: gray
-axes.facecolor: whitesmoke
-axes.linewidth: 0.6
-axes.spines.right: False
-axes.spines.top: False
-axes.labelcolor: dimgrey 
-axes.labelweight: bold
-grid.alpha: 0.6
-grid.linewidth: 0.6
-axes.prop_cycle: cycler('color', ['21295c','1b3b6f','065a82', '1c7293', '9eb3c2','bfd7ff'])
-figure.titleweight: bold
-figure.facecolor: whitesmoke
-figure.autolayout: True
-image.cmap: PuBu_r
-
+axes.axisbelow:True             # dibuja líneas de cuadrículas debajo y marcas del eje debajo de las barras
+axes.edgecolor: gray            # color del borde los ejes
+axes.facecolor: whitesmoke      # color de fondo de los ejes
+axes.grid: True                 # muestra la cuadríacula
+axes.grid.axis: y               # indica que se le aplica la cuadrícula sólo al eje y
+axes.labelcolor: 4f5969         # color de las etiquetas de los ejes
+axes.labelweight: bold          # peso de las etiquetas (negrita)
+axes.linewidth: 0.6             # ancho de la línea del borde
+axes.prop_cycle: cycler('color', ['21295c','1b3b6f','065a82', '1c7293', '9eb3c2','bfd7ff'])  #ciclo de color para líneas de trazado
+axes.spines.right: False        # oculta las lineas del borde derecho
+axes.spines.top: False          # oculta la línea del borde superior
+axes.titlepad: 30               # separación entre título y los ejes en puntos
+axes.titleweight: bold          # peso del título del gráfico
+axes.titlesize: 20              # tamaño del título del gráfico
+figure.facecolor: whitesmoke    # color de fondo de la figura
+font.size: 14                   # tamaño de la fuente
+font.weight: bold               # peso de la fuente
+grid.alpha: 0.6                 # transparencia de la cuadrícula
+grid.linestyle: -               # estilo de la línea de la cuadrícula
+grid.linewidth: 0.6             # ancho de la línea de la cuadrícula
+grid.color: gray                # color de la cuadrícula 
+text.color: 070929              # color que sólo aplica a los títulos (figura y gráficos)
+xaxis.labellocation: left       # alineación a la izquierda de la etiqueta del eje x
+yaxis.labellocation: top        # alineación de la etiqueta del eje y
+xtick.color: gray               # color del nombre de categorías o escalas del eje x
+xtick.labelsize: 10             # tamaño del nombre de categorías o escalas del eje x 
+ytick.color: gray               # color del nombre de categorías o escalas del eje y
+ytick.labelsize: 8              # tamaño del nombre de categorías o escalas del eje y

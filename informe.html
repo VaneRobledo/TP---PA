@@ -2,39 +2,58 @@
 <html>
 <head>
     <title>Informe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
+            margin: 20px;
         }
         h1, h2, h3 {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
+            margin-left: 20px;
         }
         p {
-            font-size: 14px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 20px;
         }
         table {
-            width: 90%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1200px; 
+            margin-bottom: 30px;
         }
         th, td {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
+            padding: 6px 8px;
+            border: 1px solid #e0e0e0;
+            background-color: #f5f5f5;
         }
         th {
-            background-color: #f5f5f5;
+            background-color: #dfdfe0;
+        }
+        hr {
+            margin: 20px;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1200px; 
         }
     </style>
 </head>
 <body>
     <h1>Informe de Acciones</h1>
+    <hr>
     <h2>Introducción</h2>
+    <hr>
     <p>Este informe presenta un análisis de diversas acciones del mercado bursátil. Se identifican las acciones cuyo precio actual está por debajo del promedio semanal y se grafican las que muestran mayores bajas.</p>
     <h2>Metodología</h2>
+    <hr>
     <p>Se han analizado datos de precios de cierre de las acciones durante la última semana. Los datos fueron obtenidos de Yahoo Finance. Las acciones seleccionadas son aquellas cuyo precio actual es inferior al promedio semanal.</p>
     <h2>Resultados</h2>
+    <hr>
     <p>A continuación, se presenta una tabla con las acciones cuyo precio actual está por debajo del promedio semanal, ordenadas por el porcentaje de diferencia</p>
     <div>
         <!-- Inicio Tabla de Resultados -->
@@ -43,47 +62,39 @@
 <tr><th>Símbolo  </th><th style="text-align: right;">  Precio Actual</th><th style="text-align: right;">  Precio Promedio Semanal</th><th style="text-align: right;">  Porcentaje de Diferencia</th></tr>
 </thead>
 <tbody>
-<tr><td>LONG.BA  </td><td style="text-align: right;">          32.3 </td><td style="text-align: right;">                    42.19</td><td style="text-align: right;">                23.4416   </td></tr>
-<tr><td>BPAT.BA  </td><td style="text-align: right;">        2435   </td><td style="text-align: right;">                  2525.8 </td><td style="text-align: right;">                 3.5949   </td></tr>
-<tr><td>FERR.BA  </td><td style="text-align: right;">         111.5 </td><td style="text-align: right;">                   114.95</td><td style="text-align: right;">                 3.0013   </td></tr>
-<tr><td>BBAR.BA  </td><td style="text-align: right;">        4099.7 </td><td style="text-align: right;">                  4208.36</td><td style="text-align: right;">                 2.58189  </td></tr>
-<tr><td>EDN.BA   </td><td style="text-align: right;">         996.45</td><td style="text-align: right;">                  1022.21</td><td style="text-align: right;">                 2.52003  </td></tr>
-<tr><td>FIPL.BA  </td><td style="text-align: right;">         304   </td><td style="text-align: right;">                   311.3 </td><td style="text-align: right;">                 2.345    </td></tr>
-<tr><td>SUPV.BA  </td><td style="text-align: right;">        1621.25</td><td style="text-align: right;">                  1658.47</td><td style="text-align: right;">                 2.24453  </td></tr>
-<tr><td>YPFD.BA  </td><td style="text-align: right;">       26047.7 </td><td style="text-align: right;">                 26605.1 </td><td style="text-align: right;">                 2.09538  </td></tr>
-<tr><td>SAMI.BA  </td><td style="text-align: right;">         837   </td><td style="text-align: right;">                   851   </td><td style="text-align: right;">                 1.64512  </td></tr>
-<tr><td>AGRO.BA  </td><td style="text-align: right;">          54.2 </td><td style="text-align: right;">                    55.05</td><td style="text-align: right;">                 1.54405  </td></tr>
-<tr><td>Teco2.BA </td><td style="text-align: right;">        2041.05</td><td style="text-align: right;">                  2072.7 </td><td style="text-align: right;">                 1.52675  </td></tr>
-<tr><td>GARO.BA  </td><td style="text-align: right;">         142   </td><td style="text-align: right;">                   144.15</td><td style="text-align: right;">                 1.4915   </td></tr>
-<tr><td>BMA.BA   </td><td style="text-align: right;">        7212.95</td><td style="text-align: right;">                  7319.57</td><td style="text-align: right;">                 1.45657  </td></tr>
-<tr><td>GCLA.BA  </td><td style="text-align: right;">        2018.5 </td><td style="text-align: right;">                  2046.4 </td><td style="text-align: right;">                 1.36337  </td></tr>
-<tr><td>DOME.BA  </td><td style="text-align: right;">          73.7 </td><td style="text-align: right;">                    74.57</td><td style="text-align: right;">                 1.16669  </td></tr>
-<tr><td>MOLI.BA  </td><td style="text-align: right;">        3672   </td><td style="text-align: right;">                  3708.75</td><td style="text-align: right;">                 0.9909   </td></tr>
-<tr><td>PATA.BA  </td><td style="text-align: right;">        1050   </td><td style="text-align: right;">                  1059.5 </td><td style="text-align: right;">                 0.896649 </td></tr>
-<tr><td>BHIP.BA  </td><td style="text-align: right;">         409   </td><td style="text-align: right;">                   412.5 </td><td style="text-align: right;">                 0.848485 </td></tr>
-<tr><td>BYMA.BA  </td><td style="text-align: right;">         321.5 </td><td style="text-align: right;">                   323.95</td><td style="text-align: right;">                 0.75629  </td></tr>
-<tr><td>CRES.BA  </td><td style="text-align: right;">        1095.75</td><td style="text-align: right;">                  1103.51</td><td style="text-align: right;">                 0.70366  </td></tr>
-<tr><td>TGSU2.BA </td><td style="text-align: right;">        4451.7 </td><td style="text-align: right;">                  4481.9 </td><td style="text-align: right;">                 0.673819 </td></tr>
-<tr><td>CEPU.BA  </td><td style="text-align: right;">        1177.9 </td><td style="text-align: right;">                  1185.75</td><td style="text-align: right;">                 0.662027 </td></tr>
-<tr><td>GGAL.BA  </td><td style="text-align: right;">        4008.85</td><td style="text-align: right;">                  4034.94</td><td style="text-align: right;">                 0.646478 </td></tr>
-<tr><td>HAVA.BA  </td><td style="text-align: right;">        6198   </td><td style="text-align: right;">                  6226.35</td><td style="text-align: right;">                 0.455323 </td></tr>
-<tr><td>LOMA.BA  </td><td style="text-align: right;">        1714.9 </td><td style="text-align: right;">                  1722.15</td><td style="text-align: right;">                 0.420695 </td></tr>
-<tr><td>BOLT.BA  </td><td style="text-align: right;">          50.2 </td><td style="text-align: right;">                    50.41</td><td style="text-align: right;">                 0.416584 </td></tr>
-<tr><td>CECO2.BA </td><td style="text-align: right;">         392   </td><td style="text-align: right;">                   393.55</td><td style="text-align: right;">                 0.393851 </td></tr>
-<tr><td>ALUA.BA  </td><td style="text-align: right;">        1010.5 </td><td style="text-align: right;">                  1013.7 </td><td style="text-align: right;">                 0.315675 </td></tr>
-<tr><td>CADO.BA  </td><td style="text-align: right;">         550   </td><td style="text-align: right;">                   551.55</td><td style="text-align: right;">                 0.281026 </td></tr>
-<tr><td>GBAN.BA  </td><td style="text-align: right;">        1166.5 </td><td style="text-align: right;">                  1169.7 </td><td style="text-align: right;">                 0.273574 </td></tr>
-<tr><td>INTR.BA  </td><td style="text-align: right;">         357   </td><td style="text-align: right;">                   357.8 </td><td style="text-align: right;">                 0.223589 </td></tr>
-<tr><td>TGNO4.BA </td><td style="text-align: right;">        2700.5 </td><td style="text-align: right;">                  2704.85</td><td style="text-align: right;">                 0.160822 </td></tr>
-<tr><td>MOLA.BA  </td><td style="text-align: right;">       22175   </td><td style="text-align: right;">                 22196.5 </td><td style="text-align: right;">                 0.0966371</td></tr>
-<tr><td>METR.BA  </td><td style="text-align: right;">        1073   </td><td style="text-align: right;">                  1074   </td><td style="text-align: right;">                 0.0931099</td></tr>
+<tr><td>MOLA.BA  </td><td style="text-align: right;">       19682   </td><td style="text-align: right;">                 22175   </td><td style="text-align: right;">                11.2424   </td></tr>
+<tr><td>INVJ.BA  </td><td style="text-align: right;">         501   </td><td style="text-align: right;">                   556   </td><td style="text-align: right;">                 9.89209  </td></tr>
+<tr><td>INTR.BA  </td><td style="text-align: right;">         322   </td><td style="text-align: right;">                   357   </td><td style="text-align: right;">                 9.80392  </td></tr>
+<tr><td>TXAR.BA  </td><td style="text-align: right;">         952.5 </td><td style="text-align: right;">                  1025   </td><td style="text-align: right;">                 7.07317  </td></tr>
+<tr><td>Teco2.BA </td><td style="text-align: right;">        1911.5 </td><td style="text-align: right;">                  2041.05</td><td style="text-align: right;">                 6.34723  </td></tr>
+<tr><td>GARO.BA  </td><td style="text-align: right;">         137   </td><td style="text-align: right;">                   146.1 </td><td style="text-align: right;">                 6.22861  </td></tr>
+<tr><td>ALUA.BA  </td><td style="text-align: right;">         948   </td><td style="text-align: right;">                  1010.5 </td><td style="text-align: right;">                 6.18506  </td></tr>
+<tr><td>ROSE.BA  </td><td style="text-align: right;">         105.25</td><td style="text-align: right;">                   112.05</td><td style="text-align: right;">                 6.06872  </td></tr>
+<tr><td>CTIO.BA  </td><td style="text-align: right;">        2001   </td><td style="text-align: right;">                  2073   </td><td style="text-align: right;">                 3.47323  </td></tr>
+<tr><td>METR.BA  </td><td style="text-align: right;">        1037   </td><td style="text-align: right;">                  1073   </td><td style="text-align: right;">                 3.35508  </td></tr>
+<tr><td>CECO2.BA </td><td style="text-align: right;">         379   </td><td style="text-align: right;">                   392   </td><td style="text-align: right;">                 3.31633  </td></tr>
+<tr><td>HAVA.BA  </td><td style="text-align: right;">        6011   </td><td style="text-align: right;">                  6198   </td><td style="text-align: right;">                 3.0171   </td></tr>
+<tr><td>CVH.BA   </td><td style="text-align: right;">        4996   </td><td style="text-align: right;">                  5149.5 </td><td style="text-align: right;">                 2.98087  </td></tr>
+<tr><td>LONG.BA  </td><td style="text-align: right;">          31.4 </td><td style="text-align: right;">                    32.3 </td><td style="text-align: right;">                 2.78638  </td></tr>
+<tr><td>CRES.BA  </td><td style="text-align: right;">        1077   </td><td style="text-align: right;">                  1095.75</td><td style="text-align: right;">                 1.71116  </td></tr>
+<tr><td>VALO.BA  </td><td style="text-align: right;">         309.5 </td><td style="text-align: right;">                   314   </td><td style="text-align: right;">                 1.43312  </td></tr>
+<tr><td>FIPL.BA  </td><td style="text-align: right;">         300.5 </td><td style="text-align: right;">                   304   </td><td style="text-align: right;">                 1.15132  </td></tr>
+<tr><td>GCLA.BA  </td><td style="text-align: right;">        2000   </td><td style="text-align: right;">                  2018.5 </td><td style="text-align: right;">                 0.916522 </td></tr>
+<tr><td>SAMI.BA  </td><td style="text-align: right;">         831   </td><td style="text-align: right;">                   837   </td><td style="text-align: right;">                 0.716846 </td></tr>
+<tr><td>MOLI.BA  </td><td style="text-align: right;">        3648   </td><td style="text-align: right;">                  3672   </td><td style="text-align: right;">                 0.653595 </td></tr>
+<tr><td>IRSA.BA  </td><td style="text-align: right;">        1278   </td><td style="text-align: right;">                  1285.1 </td><td style="text-align: right;">                 0.552484 </td></tr>
+<tr><td>DYCA.BA  </td><td style="text-align: right;">         429   </td><td style="text-align: right;">                   431.2 </td><td style="text-align: right;">                 0.510204 </td></tr>
+<tr><td>BYMA.BA  </td><td style="text-align: right;">         320   </td><td style="text-align: right;">                   321.5 </td><td style="text-align: right;">                 0.466563 </td></tr>
+<tr><td>RIGO.BA  </td><td style="text-align: right;">         971   </td><td style="text-align: right;">                   975.2 </td><td style="text-align: right;">                 0.430681 </td></tr>
+<tr><td>DGCU2.BA </td><td style="text-align: right;">        1175   </td><td style="text-align: right;">                  1175.5 </td><td style="text-align: right;">                 0.0425351</td></tr>
 </tbody>
 </table>
 <!-- Fin Tabla de Resultados -->
     </div>
     <h2>Gráfico de las acciones con Mayor Baja</h2>
+    <hr>
     <p>El siguiente gráfico muestra el porcentaje de diferencia de las cinco acciones que presentaron la mayor baja en la última semana.</p>
-    <img src="img\grafico_acciones.png" width="1200"/>
+    <img src="img\grafico_acciones.png"/>
 
 </body>
 </html>

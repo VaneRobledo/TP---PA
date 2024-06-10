@@ -1,30 +1,38 @@
+import os
 import yfinance as yf
 from datetime import datetime, timedelta
 from tabulate import tabulate
 import matplotlib.pyplot as plt
-plt.style.use('./estilos/mi_estilo.mplstyle')
 
-class Accion:     #DEFINE LA CLASE ACCION 
-    def __init__(self, symbol): #ATRIBUTOS DE LA CLASE ACCION
+#Obtiene la ruta absoluta del archivo de estilo
+style_path = os.path.abspath('./estilos/mi_estilo.mplstyle')
+plt.style.use(style_path)
+
+#Se define la clase que representa una acción específica
+class Accion():           
+    def __init__(self, symbol):
         self.symbol = symbol
         self.data = None
         self.precio_promedio_semana = None
         self.precio_actual = None
         self.porcentaje_diferencia = None
 
-    def obtener_datos_diarios(self, start_date, end_date): #METODO PARA OBTENER DATOS DURANTE EL PLAZO DE DIAS QUE SE ESTIPULE
+    #Obtiene los datos durante el plazo que se estipule
+    def obtener_datos_diarios(self, start_date, end_date):
         try:
             self.data = yf.download(self.symbol, start=start_date, end=end_date)
         except Exception as e:
             print(f"Error al obtener datos para {self.symbol}: {e}")
 
-    def calcular_precio_promedio(self):  #CALCULA EL PROMEDIO SEMANAL (EN ESTE CASO) DEL PRECIO DE LA ACCION
+    #Calcula el promedio semanal del precio de la acción
+    def calcular_precio_promedio(self):
         if self.data is not None and not self.data.empty:
             self.precio_promedio_semana = self.data['Close'].mean()
         else:
             self.precio_promedio_semana = None
-
-    def obtener_precio_actual(self): #OBTIENE EL PRECIO ACTUAL CONTRA EL CUAL SE VA A COMPARAR EL PROMEDIO
+    
+    #Obtiene el precio actual contra el cual se va a comparar el promedio
+    def obtener_precio_actual(self):
         try:
             ticker = yf.Ticker(self.symbol)
             self.precio_actual = ticker.history(period='1d')['Close'].iloc[-1]
@@ -32,20 +40,22 @@ class Accion:     #DEFINE LA CLASE ACCION
             print(f"Error al obtener el precio actual para {self.symbol}: {e}")
             self.precio_actual = None
 
-    def comparar_precios(self): # SI EL PRECIO ACTUAL ES MENOR AL SEMANAL, CALCULA EL PROCETAJE DE DIFERENCIA ENTRE EL PRECIO ACTUAL Y EL PROMEDIO SEMANAL
+     #Si el precio actual es menor que el semanal, calcula el porcentaje de diferencia entre el precio actual y el promedio semanal
+    def comparar_precios(self):
         if self.precio_promedio_semana is not None and self.precio_actual is not None:
             if self.precio_actual < self.precio_promedio_semana:
                 self.porcentaje_diferencia = ((self.precio_promedio_semana - self.precio_actual) / self.precio_promedio_semana) * 100
                 return [self.symbol, self.precio_actual, self.precio_promedio_semana, self.porcentaje_diferencia]
         return None
 
-class GestorAcciones:
+#Se define la clase que gestiona y analiza el conjunto de acciones
+class GestorAcciones():
     def __init__(self, symbols):
         self.acciones = [Accion(symbol) for symbol in symbols]
 
     def procesar_acciones(self):
         end_date = datetime.now().strftime('%Y-%m-%d')
-        start_date = (datetime.now() - timedelta(days=15)).strftime('%Y-%m-%d')
+        start_date = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
         resultados = []
 
         for accion in self.acciones:
@@ -58,7 +68,8 @@ class GestorAcciones:
 
         return resultados
 
-def main(): #DEFINIMOS QUE ACCIONES VAMOS A ANALIZAR
+def main():
+    #Se definen las acciones a analizar
     symbols = ['AGRO.BA', 'ALUA.BA', 'AUSO.BA', 'BBAR.BA', 'BHIP.BA', 'BMA.BA', 'BOLT.BA', 'BPAT.BA', 'BYMA.BA', 'CADO.BA',
                 'CAPX.BA', 'CARC.BA', 'CECO2.BA', 'CELU.BA', 'CEPU.BA', 'CGPA2.BA', 'COME.BA', 'CRES.BA', 'CVH.BA', 'CTIO.BA',
                 'DGCU2.BA', 'DOME.BA', 'DYCA.BA', 'EDN.BA', 'FERR.BA', 'FIPL.BA', 'GAMI.BA', 'GARO.BA', 'GBAN.BA', 'GCDI.BA',
@@ -71,45 +82,42 @@ def main(): #DEFINIMOS QUE ACCIONES VAMOS A ANALIZAR
     resultados = gestor_acciones.procesar_acciones()
 
     if resultados: 
+        #Se genera una tabla que muestra las acciones por debajo del promedio
         headers = ["Símbolo", "Precio Actual", "Precio Promedio Semanal", "Porcentaje de Diferencia"]
         print("\nAcciones por debajo del promedio:")
         resultados = sorted(resultados, key=lambda x: x[3], reverse=True)
         print(tabulate(resultados, headers=headers, tablefmt="grid"))
         table_html = tabulate(resultados, headers=headers, tablefmt="html")
         
-        # Marcar el inicio y fin del contenido que debe actualizarse
+        #Se inserta la tabla en el archivo informe.html
         start_marker = '<!-- Inicio Tabla de Resultados -->'
         end_marker = '<!-- Fin Tabla de Resultados -->'
         
-        # Leer el contenido actual de informe.html
         with open('informe.html', 'r') as file:
             informe_content = file.read()
 
-        # Reemplazar el contenido entre los marcadores
         new_content = f'{start_marker}\n{table_html}\n{end_marker}'
         updated_content = informe_content.split(start_marker)[0] + new_content + informe_content.split(end_marker)[1]
 
-        # Guardar el contenido actualizado de nuevo en informe.html
+        #Guarda la tabla actualizada en informe.html
         with open('informe.html', 'w') as file:
             file.write(updated_content)
-        # Seleccionar las 5 acciones con mayor baja
+        
+        #Se seleccionan y se grafican las cinco acciones con mayor baja
         top_5_bajas = resultados[:5]
         
-        # Graficar las 5 acciones con mayor baja
         plt.figure(figsize=(14, 7))
         
         for accion in top_5_bajas:
             symbol = accion[0]
-            # Agregar el porcentaje de diferencia al gráfico
             plt.bar(symbol, accion[3])
         
-        plt.xlabel('Símbolo de la Acción')  # Establece la etiqueta del eje X
-        plt.ylabel('Porcentaje de Diferencia')  # Establece la etiqueta del eje Y
-        plt.title('Acciones con Mayor Baja en la Última Semana')  # Establece el título del gráfico
-        plt.grid(True)  # Activa la cuadrícula en el gráfico
-        plt.savefig("img/grafico_acciones.png") #se guarda el gráfico como una imagen
-        plt.show()  # Muestra el gráfico
+        plt.xlabel('Símbolo de la Acción')
+        plt.ylabel('Porcentaje de Diferencia')
+        plt.title('Acciones con Mayor Baja en la Última Semana')
         
+        #Se guarda el gráfico como imagen 
+        plt.savefig("img/grafico_acciones.png")
         
     else:
         print("\nNo hay acciones por debajo del promedio esta semana.")
