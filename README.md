@@ -26,7 +26,7 @@ Para ejecutar el script, sigue estos pasos:
 
 1. Clona el repositorio:
     ```bash
-    [git clone https://github.com/VaneRobledo/TP_PA/tree/master)
+    git clone https://github.com/VaneRobledo/TP_PA/tree/master
     ```
 
 2. Instala las dependencias necesarias:
@@ -40,7 +40,7 @@ Para ejecutar el script, sigue estos pasos:
 
 3. Ejecuta el script principal:
     ```bash
-    python analisis_acciones.py
+    python acciones.py
     ```
 
 ## Ejemplo de Uso
