@@ -26,8 +26,7 @@ Para ejecutar el script, sigue estos pasos:
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/tu-repositorio.git
-    cd tu-repositorio
+    [git clone https://github.com/VaneRobledo/TP_PA/tree/master)
     ```
 
 2. Instala las dependencias necesarias:
