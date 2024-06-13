@@ -32,7 +32,11 @@ Para ejecutar el script, sigue estos pasos:
 
 2. Instala las dependencias necesarias:
     ```bash
-    pip install -r requirements.txt
+import os
+import yfinance as yf
+from datetime import datetime, timedelta
+from tabulate import tabulate
+import matplotlib.pyplot as plt
     ```
 
 3. Ejecuta el script principal:
