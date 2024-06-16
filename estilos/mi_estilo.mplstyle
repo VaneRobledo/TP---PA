@@ -11,7 +11,8 @@ axes.spines.right: False        # oculta las lineas del borde derecho
 axes.spines.top: False          # oculta la línea del borde superior
 axes.titlepad: 30               # separación entre título y los ejes en puntos
 axes.titleweight: bold          # peso del título del gráfico
-axes.titlesize: 20              # tamaño del título del gráfico
+axes.titlesize: 28              # tamaño del título del gráfico
+axes.labelsize: 18              # tamaño de la fuente de las etiquetas x e y
 figure.facecolor: whitesmoke    # color de fondo de la figura
 font.size: 14                   # tamaño de la fuente
 font.weight: bold               # peso de la fuente
@@ -23,6 +24,4 @@ text.color: 070929              # color que sólo aplica a los títulos (figura 
 xaxis.labellocation: left       # alineación a la izquierda de la etiqueta del eje x
 yaxis.labellocation: top        # alineación de la etiqueta del eje y
 xtick.color: gray               # color del nombre de categorías o escalas del eje x
-xtick.labelsize: 10             # tamaño del nombre de categorías o escalas del eje x 
 ytick.color: gray               # color del nombre de categorías o escalas del eje y
-ytick.labelsize: 10              # tamaño del nombre de categorías o escalas del eje y
